@@ -1,0 +1,21 @@
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+nav{
+  background-color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  padding:0px 20px;
+}
+.logo {
+  font-size: 30px;
+  font-family: cursive;
+  color:#61dafb;
+}
