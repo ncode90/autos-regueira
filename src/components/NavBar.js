@@ -1,10 +1,12 @@
 import React from 'react'
-import '../styles/NavBar.css';
+import CartWidget from './CartWidget'
+import '../styles/NavBar.css'
 
 function NavBar(){
     return(
-        <nav>
-            <div className="logo">Autos Regueira</div>
+        <nav className="logo">
+            <h3>Autos Regueira</h3>
+            <CartWidget/>
         </nav>
     )
 }
