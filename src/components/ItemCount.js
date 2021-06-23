@@ -6,12 +6,12 @@ function ItemCount({stock, initial, onAdd}) {
 
   const increaseCount = () => {
     if(stock>count)
-        setCount(localCount => localCount + 1)
+        setCount(count+1)
   }
 
   const decreaseCount = () => {
     if(count>1)
-        setCount(localCount => localCount - 1)
+        setCount(count-1)
   }
 
   return (
@@ -21,9 +21,10 @@ function ItemCount({stock, initial, onAdd}) {
             <span className="count">{count}</span>
             <button onClick={increaseCount} className="count-plus">+</button>
         </div>
-        <button onClick={onAdd} className="onAdd">Agregar al carrito</button>
+        <button onClick= {() => onAdd(count)} className="onAdd">Agregar al carrito</button>
+
     </div>
   )
 }
 
-export default ItemCount;
+export default ItemCount
