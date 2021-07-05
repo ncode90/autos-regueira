@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import '../styles/ItemListContainer.css'
 import ItemCount from './ItemCount'
 import ItemList from './ItemList'
+import CardGroup from 'react-bootstrap/CardGroup'
+import Spinner from 'react-bootstrap/Spinner'
 
 function ItemListContainter({greeting}){
     
@@ -26,7 +28,7 @@ function ItemListContainter({greeting}){
     <div>
         <p className="greeting">{greeting}</p>
         <ItemCount stock={5} initial={1} onAdd={(count) => alert(count + " items agregados al carrito")}/>
-        {items.length === 0 ? (<span>Cargando...</span>) : (<ItemList items={items} />)}
+           {items.length === 0 ? (<Spinner animation="border" variant="info" />) : ( <CardGroup><ItemList items={items} /></CardGroup>)}
     </div>
     )
 }

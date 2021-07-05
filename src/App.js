@@ -1,18 +1,17 @@
-import logo from './logo.svg'
 import './App.css';
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainter'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import ItemDetailContainter from './components/ItemDetailContainer';
 
 function App() {
   return (
     <div className="App">
       <NavBar/>
       <ItemListContainer greeting="¡Saludos!"/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Autos Regueira</p>
-      </header>
-    </div>
+      <ItemDetailContainter></ItemDetailContainter>
+      </div>
+    
   );
 }
 
