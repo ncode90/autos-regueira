@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from "react"
 import Card from 'react-bootstrap/Card'
+import { Link } from 'react-router-dom'
 import ItemCount from './ItemCount'
 
 function ItemDetail(props){
-
+    const [counter, setCounter] = useState(0)
+    
     return(
         <div>
             <Card bg='info' text= 'white' className="mb-2" style={{ width: '800px' , margin: '0 auto'}}>
@@ -14,7 +16,8 @@ function ItemDetail(props){
                     <Card.Text>{props.item.price}</Card.Text>
             </Card.Body>
             </Card>
-            <ItemCount stock={5} initial={1} onAdd={(count) => alert(count + " items agregados al carrito")}/>  
+            {counter > 0 ? (<Link to='/cart'><button type="button" class="btn btn-outline-info">Termina tu compra</button></Link>) 
+            : (<ItemCount stock={5} initial={1} onAdd={setCounter}/>)}
         </div>
     )
 }

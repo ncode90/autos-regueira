@@ -27,9 +27,6 @@ function ItemDetailContainter(){
         <div>
         {item.length === 0 ? (<Spinner animation="border" variant="info" />) : (<ItemDetail item={item[0]}/>)}
         </div>
-        //{itemId}-{item.length}-{console.log(item[0].title)}
-        //<ItemDetail item={items.filter(e => e.id === itemId)}/>
-        //title={item.title} description={item.description} price={item.price} pictureUrl={item.pictureUrl}
     )
 }
 
