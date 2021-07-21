@@ -19,9 +19,18 @@ export const ContextProvider = ({ children }) => {
         else
             alert("El producto ya se encuentra en el carrito")
     }
+
+    const clear = () => {
+        setProducts([])
+    }
+
+    const removeItem = (id) => {
+        const newProducts = products.filter((element) => element.id !== id)
+        setProducts(newProducts)
+    }
  
     return(
-        <CartContext.Provider value={{addItem, products}}>
+        <CartContext.Provider value={{addItem, clear, removeItem, products}}>
             {children}
         </CartContext.Provider>
     )

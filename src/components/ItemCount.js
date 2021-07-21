@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import '../styles/ItemCount.css'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {faCartPlus} from '@fortawesome/free-solid-svg-icons'
 
 function ItemCount({stock, initial, onAdd}) {
   const [count, setCount] = useState(initial)
@@ -21,8 +23,7 @@ function ItemCount({stock, initial, onAdd}) {
             <span className="count">{count}</span>
             <button onClick={increaseCount} className="count-plus">+</button>
         </div>
-        <button onClick= {() => onAdd(count)} className="onAdd">Agregar al carrito</button>
-
+        <button onClick= {() => onAdd(count)} className="onAdd"><FontAwesomeIcon icon={faCartPlus}/> Agregar al carrito</button>
     </div>
   )
 }

@@ -18,7 +18,7 @@ function ItemDetail(props){
                     <Card.Text>{props.item.price}</Card.Text>
             </Card.Body>
             </Card>
-            {counter > 0 ? (<Link to='/cart'><button onClick={() => addItem(props.item, counter)} type="button" class="btn btn-outline-info">Termina tu compra</button></Link>) 
+            {counter > 0 ? (<Link to='/cart'><button onClick={() => addItem(props.item, counter)} type="button" class="btn btn-outline-info" style={{ marginBottom: '10px'}}>Termina tu compra</button></Link>) 
             : (<ItemCount stock={5} initial={1} onAdd={setCounter}/>)}
         </div>
     )
