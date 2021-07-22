@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../context/cartContext'
 import CartWidget from './CartWidget'
 import '../styles/NavBar.css'
 
 function NavBar(){
+    const context = useContext(CartContext)
     return(
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <span><Link to="/" class="navbar-brand">Autos Regueira</Link></span>
@@ -18,7 +20,7 @@ function NavBar(){
                     <li class="nav-item"><Link to={`/category/jeep`} class="nav-link">Jeep</Link></li>
                 </ul>
             </div>
-            <CartWidget/>
+            {context.products.length &&  <Link to='/Cart'><CartWidget/></Link>}
         </nav>
     )
 }

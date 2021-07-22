@@ -9,7 +9,7 @@ export const ContextProvider = ({ children }) => {
         const element = {
             id: item.id,
             title: item.title,
-            description: item.description,
+            price: item.price,
             quantity: quantity
         }
 
