@@ -15,7 +15,7 @@ function ItemDetail(props){
                 <Card.Img variant="top" src={props.item.pictureUrl} style={{width: '100%'}}/>
                 <Card.Body>
                     <Card.Title><h3>{props.item.description}</h3></Card.Title>
-                    <Card.Text>{props.item.price}</Card.Text>
+                    <Card.Text>${parseFloat(props.item.price).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}</Card.Text>
             </Card.Body>
             </Card>
             {counter > 0 ? (<Link to='/cart'><button onClick={() => addItem(props.item, counter)} type="button" class="btn btn-outline-info" style={{ marginBottom: '10px'}}>Termina tu compra</button></Link>) 

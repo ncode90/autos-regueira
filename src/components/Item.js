@@ -12,7 +12,7 @@ function Item(props) {
               <Card.Text>{props.description}</Card.Text>
             </Card.Body>
             <Card.Footer>
-              <small className="text-muted">{props.price}</small>
+              <small className="text-muted">${parseFloat(props.price).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}</small>
             </Card.Footer>
           </Card>  
       </Link>

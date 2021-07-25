@@ -17,7 +17,7 @@ function Cart(){
                 <li class="list-group-item d-flex justify-content-between align-items-start" style={{width: "25%", alignSelf: "center"}}>
                     <div class="ms-2 me-auto">
                     <div class="fw-bold">{product.title}</div>
-                    <div style={{textAlign: "left"}}>{(parseFloat(product.price, 1000)*parseInt(product.quantity)).toFixed(3)} €</div>
+                    <div style={{textAlign: "left"}}>${(parseFloat(product.price, 1000)*parseInt(product.quantity)).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}</div>
                     </div>
                     <span class="badge bg-secondary rounded-pill">{product.quantity}</span>
                     <button type="button" class="btn badge bg-danger rounded-pill" onClick={() => context.removeItem(product.id)} style={{ marginLeft: '5px'}}><FontAwesomeIcon icon={faTrashAlt}/></button>
@@ -28,7 +28,7 @@ function Cart(){
                 <Link to='/'><button type="button" class="btn btn-secondary" style={{ margin: '10px'}}><FontAwesomeIcon icon={faChevronLeft}/> Volver</button></Link>
                 <button type="button" class="btn btn-danger" onClick={context.clear}><FontAwesomeIcon icon={faTrash}/> Vaciar Carrito</button>
             </div>
-            <div class="alert alert-info" role="alert">Total: {totalAmount} €</div>
+            <div class="alert alert-info" role="alert">Total: ${parseFloat(totalAmount).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}</div>
         </div> 
         :
         <div>

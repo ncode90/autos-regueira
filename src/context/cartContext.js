@@ -7,7 +7,7 @@ export const ContextProvider = ({ children }) => {
 
     const addItem = (item, quantity) => {
         const element = {
-            id: item.id,
+            id: item.itemId,
             title: item.title,
             price: item.price,
             quantity: quantity
