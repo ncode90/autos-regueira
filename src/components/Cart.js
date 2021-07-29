@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../context/cartContext'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faTrashAlt, faChevronLeft, faTrash} from '@fortawesome/free-solid-svg-icons'
+import {faTrashAlt, faChevronLeft, faChevronRight, faTrash} from '@fortawesome/free-solid-svg-icons'
 
 function Cart(){
     const context = useContext(CartContext)
@@ -25,8 +25,9 @@ function Cart(){
                 ))}
             </ol>
             <div class="d-grid gap-2 d-md-block">
-                <Link to='/'><button type="button" class="btn btn-secondary" style={{ margin: '10px'}}><FontAwesomeIcon icon={faChevronLeft}/> Volver</button></Link>
-                <button type="button" class="btn btn-danger" onClick={context.clear}><FontAwesomeIcon icon={faTrash}/> Vaciar Carrito</button>
+                <Link to='/'><button type="button" class="btn btn-secondary"><FontAwesomeIcon icon={faChevronLeft}/> Volver</button></Link>
+                <button type="button" class="btn btn-danger" onClick={context.clear} style={{ margin: '10px'}}><FontAwesomeIcon icon={faTrash}/> Vaciar Carrito</button>
+                <Link to='/order'><button type="button" class="btn btn-success">Continuar <FontAwesomeIcon icon={faChevronRight}/></button></Link>
             </div>
             <div class="alert alert-info" role="alert">Total: ${parseFloat(totalAmount).toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}</div>
         </div> 

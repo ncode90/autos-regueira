@@ -6,6 +6,7 @@ import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainter'
 import ItemDetailContainter from './components/ItemDetailContainer'
 import Cart from './components/Cart'
+import Order from './components/Order'
 import { ContextProvider} from "./context/cartContext"
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
                 <Route exact path="/category/:categoryId"><ItemListContainer/></Route>
                 <Route exact path="/item/:itemId"><ItemDetailContainter/></Route>
                 <Route exact path='/cart'><Cart/></Route>
+                <Route exact path='/order'><Order/></Route>
               </Switch>
             </Router>
         </div> 
